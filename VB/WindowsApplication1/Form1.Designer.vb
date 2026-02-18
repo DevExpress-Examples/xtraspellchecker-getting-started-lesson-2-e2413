@@ -1,5 +1,7 @@
-﻿Namespace WindowsApplication1
-    Partial Public Class Form1
+Namespace WindowsApplication1
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,27 +12,27 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim spellCheckerISpellDictionary2 As New DevExpress.XtraSpellChecker.SpellCheckerISpellDictionary()
-            Dim spellCheckerCustomDictionary2 As New DevExpress.XtraSpellChecker.SpellCheckerCustomDictionary()
-            Dim optionsSpelling2 As New DevExpress.XtraSpellChecker.OptionsSpelling()
+            Dim spellCheckerISpellDictionary2 As DevExpress.XtraSpellChecker.SpellCheckerISpellDictionary = New DevExpress.XtraSpellChecker.SpellCheckerISpellDictionary()
+            Dim spellCheckerCustomDictionary2 As DevExpress.XtraSpellChecker.SpellCheckerCustomDictionary = New DevExpress.XtraSpellChecker.SpellCheckerCustomDictionary()
+            Dim optionsSpelling2 As DevExpress.XtraSpellChecker.OptionsSpelling = New DevExpress.XtraSpellChecker.OptionsSpelling()
             Me.spellChecker1 = New DevExpress.XtraSpellChecker.SpellChecker(Me.components)
             Me.memoEdit1 = New DevExpress.XtraEditors.MemoEdit()
             Me.simpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-            DirectCast(Me.memoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.memoEdit1.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' spellChecker1
@@ -67,6 +69,7 @@
             Me.simpleButton1.Size = New System.Drawing.Size(91, 23)
             Me.simpleButton1.TabIndex = 1
             Me.simpleButton1.Text = "Check spelling"
+            AddHandler Me.simpleButton1.Click, New System.EventHandler(AddressOf Me.simpleButton1_Click)
             ' 
             ' Form1
             ' 
@@ -77,16 +80,16 @@
             Me.Controls.Add(Me.memoEdit1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.memoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.memoEdit1.Properties), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+'#End Region
         Private spellChecker1 As DevExpress.XtraSpellChecker.SpellChecker
+
         Private memoEdit1 As DevExpress.XtraEditors.MemoEdit
-        Private WithEvents simpleButton1 As DevExpress.XtraEditors.SimpleButton
+
+        Private simpleButton1 As DevExpress.XtraEditors.SimpleButton
     End Class
 End Namespace
-
